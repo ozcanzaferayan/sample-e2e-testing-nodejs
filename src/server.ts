@@ -1,11 +1,9 @@
 import cors from "cors";
 import express, { json } from "express";
 import { Pool } from "pg";
-import { mw } from "request-ip";
 
 const app = express();
 app.use(json());
-app.use(mw());
 app.use(cors());
 
 const pool = new Pool({
