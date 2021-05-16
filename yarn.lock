@@ -135,6 +135,11 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
+"@types/node-pg-migrate@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@types/node-pg-migrate/-/node-pg-migrate-2.3.1.tgz#227fd973c6ce098b0b4a69030c027fc1d23f9ee3"
+  integrity sha512-ccKzTzDu8b6IRttXh1Ch6JlEQvVM4jrRUU9xyEp+Pq5yd3vBCg84pJeAUzycyts5Tg+eyiLqmlIW3g/SrRlqEQ==
+
 "@types/node@*":
   version "15.3.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.3.0.tgz#d6fed7d6bc6854306da3dea1af9f874b00783e26"

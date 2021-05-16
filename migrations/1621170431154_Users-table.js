@@ -2,6 +2,9 @@
 // export DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres
 // yarn migrate up
 
+/**
+ * @param {import("node-pg-migrate").MigrationBuilder} pgm
+ */
 exports.up = (pgm) => {
   pgm.createSequence('users_id_seq');
   pgm.createTable('users', {
