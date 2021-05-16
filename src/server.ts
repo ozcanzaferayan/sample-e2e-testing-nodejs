@@ -1,21 +1,24 @@
 import cors from "cors";
 import express, { json } from "express";
-import { Pool } from "pg";
+import { Pool, PoolClient } from "pg";
+import { CustomNodeJsGlobal } from "./types/global";
+import { getUsers } from "./user/handler";
+
+declare const global: CustomNodeJsGlobal;
 
 const app = express();
 app.use(json());
 app.use(cors());
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
-});
-pool.connect();
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+// });
+
+// global.pool = pool;
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server running.");
 });
 
-app.get("/", async (res: express.Response) => {
-  const results = (await pool.query('SELECT * FROM users;', [])).rows;
-  res.status(200).json(results);
-});
+app.get("/", getUsers);
+//app.get("/", () => console.log("asdasd"));

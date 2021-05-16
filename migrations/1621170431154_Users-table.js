@@ -6,28 +6,28 @@
  * @param {import("node-pg-migrate").MigrationBuilder} pgm
  */
 exports.up = (pgm) => {
-  pgm.createSequence('users_id_seq');
-  pgm.createTable('users', {
+  pgm.createSequence("users_id_seq");
+  pgm.createTable("users", {
     id: {
-      type: 'integer',
+      type: "integer",
       primaryKey: true,
       notNull: true,
       default: pgm.func(`nextval('users_id_seq')`),
     },
     name: {
-      type: 'varchar(1000)',
-      notNull: true
+      type: "varchar(1000)",
+      notNull: true,
     },
-    created_date: {
+    createdDate: {
       type: "timestamp with time zone",
-      default: pgm.func('current_timestamp'),
-      notNull: true
-    }
+      default: pgm.func("current_timestamp"),
+      notNull: true,
+    },
   });
-  pgm.sql(`INSERT INTO users (name) VALUES ('Zafer AYAN');`)
-}
+  pgm.sql(`INSERT INTO users (name) VALUES ('Zafer AYAN');`);
+};
 
-exports.down = pgm => {
-  pgm.dropTable('users');
-  pgm.dropSequence('users_id_seq');
+exports.down = (pgm) => {
+  pgm.dropTable("users");
+  pgm.dropSequence("users_id_seq");
 };
